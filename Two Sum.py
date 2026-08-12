@@ -8,3 +8,13 @@ class Solution:
                     indices[1] = j+i+1
                     return indices
         return []
+
+class Solution2:
+    def twoSum(self, nums:list[int], target:int) -> list[int]:
+        hashmap = {}
+        for i in range(len(nums)):
+            hashmap[nums[i]] = i
+        for i in range(len(nums)):
+            if target-nums[i] in hashmap and hashmap[target-nums[i]] != i:
+                return [i, hashmap[target-nums[i]]]
+        return []
