@@ -18,3 +18,12 @@ class Solution2:
             if target-nums[i] in hashmap and hashmap[target-nums[i]] != i:
                 return [i, hashmap[target-nums[i]]]
         return []
+
+class Solution3:
+    def twoSum(self, nums:list[int], target:int) -> list[int]:
+        hashmap = {}
+        for i in range(len(nums)):
+            if target-nums[i] in hashmap:
+                return [i, hashmap[target-nums[i]]]
+            hashmap[nums[i]] = i
+        return []
